@@ -1,0 +1,21 @@
+.login-box {
+    position: relative;
+    color: #212529;
+    padding: 1rem;
+    margin-right: 0;
+    margin-left: 0;
+    border: .2rem solid #ececec;
+}
+
+.title-box {
+    background: rgb(27,63,166);
+    background: radial-gradient(circle, rgba(27,63,166,1) 0%, rgba(0,87,180,1) 56%, rgba(99,105,199,1) 100%);
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    text-align: center;
+}
