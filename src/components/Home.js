@@ -32,10 +32,13 @@ class Home extends React.Component {
         movieService.getDetail(id).then(response => {
             if (response.data) {
                 this.setState({movieDetail: response.data})
+            } else {
+                if (response.status === 'error') {
+                    this.setState({movieDetail: {id: id, errorMessage: response.message}})
+                }
             }
         }).catch(error => {
             console.log(error);
-            this.setState({movieDetail: {}})
         });
     };
 

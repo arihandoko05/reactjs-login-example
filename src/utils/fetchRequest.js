@@ -32,7 +32,7 @@ function fetchGet(url, dataJson) {
     };
 
     if (dataJson) {
-        let params = ''
+        let params = '';
         for (let item in dataJson) {
             params += '&'+item+'='+dataJson[item];
         }
@@ -42,14 +42,14 @@ function fetchGet(url, dataJson) {
 
     const sweetPromise = new Promise((resolve, reject) => {
         fetch(url, requestOptions).then((response) => {
-            resolve(response.json());
-        }).then((response) => {
-            if (!response.ok) {
-                if (response.status === 401 && localStorage.getItem('user')) {
+            return response.json();
+        }).then((data) => {
+            if (!data.ok) {
+                if (data.status === 401 && localStorage.getItem('user')) {
                     unAuthorized();
                 }
             }
-            console.log(response);
+            resolve(data);
         }).catch(error => {
             reject(error);
             console.log(error);

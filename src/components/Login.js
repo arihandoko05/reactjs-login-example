@@ -52,7 +52,7 @@ class Login extends React.Component {
                        this.setState({errorLogin: true, errorMessage: response.message});
                    }
                 }).catch(error => {
-                this.setState({errorLogin: true, errorMessage: error.message});
+                    this.setState({errorLogin: true, errorMessage: error.message});
                 });
         }
 
